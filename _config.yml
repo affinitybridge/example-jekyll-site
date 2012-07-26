@@ -2,7 +2,7 @@ safe:        false
 auto:        true
 server:      true
 server_port: 4000
-base-url:    /blog
+base-url:    /example-jekyll-site
 
 source:      .
 destination: ./_site
