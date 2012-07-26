@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # Server-side mapping
 
 We have several projects that involve processing large geospatial datasets 
@@ -166,7 +169,7 @@ There are a plenty of options available for tile servers including TileCache,
 TileStache, TileLite and TileStream. We have been using TileStache as it has an 
 excellent balance of features and simplicity.
 
-### (TileStache)[http://tilestache.org/]
+### [TileStache](http://tilestache.org/)
 
 TileStache is a server application that handles requests for tiles and serves 
 and caches tiles generated from Mapnik or other rendering providers. It's 

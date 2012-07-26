@@ -1,0 +1,158 @@
+$primary: #B8120E;
+$secondary: #CE6F6D;
+$complement: #364C6A;
+$comp_light: lightgrey; //adjust-lightness($complement, 30);
+
+// Imports -------------------------------------------------------------------
+
+@import "base";
+@import "compass/typography/lists/inline-block-list";
+
+/* Layout ------------------------------------------------------------------*/
+
+div#content {
+  @include container;
+  @include susy-grid-background;
+}
+
+header[role="banner"] .inner {
+  @include container;
+  @include susy-grid-background;
+
+  hgroup {
+    #logo {
+      @include span-columns(2);
+      height: 6em;
+      min-width: 81px;
+    }
+    h1,
+    h4 {
+      @include prefix(2);
+    }
+    h4 {
+      @include pie-clearfix;
+    }
+  }
+}
+
+nav {
+  ul {
+    @include inline-block-list(1em);
+  }
+  li {
+    line-height: 3em;
+  }
+  a {
+    padding: 0.5em 0.5em 0.5em;
+  }
+}
+
+div#content {
+  padding-top: 1em;
+  header.page-header {
+    /* @include full; */
+  }
+}
+
+div[role="main"] {
+  @include container;
+  @include susy-grid-background;
+
+  padding-top: 1em;
+
+  form,
+  section {
+    @include span-columns(9);
+  }
+  aside {
+    @include span-columns(3);
+    @include omega;
+  }
+}
+
+footer {
+  p { 
+    /* @include full; */
+    @include pad(3,3);
+  }
+}
+
+
+/* Display -----------------------------------------------------------------*/
+
+body {
+  background: url('../img/bg_cablecar.png') center bottom no-repeat $comp_light;
+}
+
+#{headings()} {
+  font-family: 'Crimson Text', serif;
+  margin: 0.2em 0.2em 0.5em;
+  line-height: 1em;
+}
+
+header[role="banner"] {
+  background-color: $primary;
+
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+
+  hgroup {
+    #logo {
+      background: url('../img/logo.png') right 0.9em no-repeat;
+    }
+    #{headings()} {
+      margin: 0;
+    }
+    h1 { 
+      font-size: 3.5em;
+      line-height: 1.2em;
+    }
+    h4 {
+      font-size: 0.75em;
+      text-transform: uppercase;
+    }
+  }
+
+  nav {
+    background: $secondary;
+  }
+
+  nav {
+    li a:hover,
+    li a:active,
+    li.current {
+      border-bottom: 5px $comp_light solid;
+      color: $comp_light;
+    }
+  }
+
+}
+
+div[role="main"] {
+  background: white;
+
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.5em; }
+  h3 { font-size: 1em; }
+
+  p,
+  ul, ol {
+    line-height: 1.3em;
+    margin-bottom: 1em;
+  }
+
+  ul, ol {
+    margin-left: 30px;
+  }
+  li {
+    list-style: circle;
+  }
+
+}
